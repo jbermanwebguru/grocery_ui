@@ -1,0 +1,27 @@
+0
+1
+2
+3
+
+if you drag on zero, you become zero
+if you drag on > dragover, you become dragover+1
+
+dragging = element being dragged
+index = element index
+dragover = element being dragged over
+
+0 dragged over 1: 1 moves up (dragging == 0 && dragging-1 == index : up)
+0 dragged over 2: 1 and 2 move up (dragging == 0 && dragging+1 < index: up)
+0 dragged over 3: 1, 2 and 3 move up (dragging == 0 && dragging+1 < index : up)
+
+1 dragged over 0: 0 moves down (dragging > 0 && dragover == 0 && dragging > index : down)
+1 dragged over 2: 2 moves up (dragging > 0 && dragging < index : up)
+1 dragged over 3: 3 and 2 move up (dragging > 0 && dragging < index : up)
+
+2 dragged over 0: 0 and 1 move down (dragging > 0 && dragover == 0 && dragging < index : down)
+2 dragged over 1: 1 moves down (dragging > 0 && dragging-1 == index : down)
+2 dragged over 3: 2 moves up (dragging > 0 && dragging < index : up)
+
+3 dragged over 0: 0, 1 and 2 move down (dragging > 0 && dragover == 0 && dragging < index : down)
+3 dragged over 1: 1 and 2 move down (dragging > 0 && dragging > index : down)
+3 dragged over 2: 2 moves down (dragging > 0 && dragging > index : down)
